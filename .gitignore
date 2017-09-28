@@ -1,0 +1,13 @@
+*.bak
+*.egg-info
+*.py[cod]
+*.swp
+*.zip
+.coverage
+.noseids
+.svn
+.tox
+bin
+include
+node_modules
+local_settings.py
