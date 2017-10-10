@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from nblog import views
 
 urlpatterns = [
+    url(r'^$', views.HomeView.as_view()),
+
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),

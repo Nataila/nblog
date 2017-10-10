@@ -1,0 +1,10 @@
+{% extends 'nblog/base.html' %}
+{% block main%}
+  {% for i in posts_list %}
+    <h3><a href=""></a>{{ i.title }}</h3>
+    <p>{{ i.created_at }}</p>
+    <div class="post-content">
+      {{ i.content|safe }}
+    </div>
+  {% endfor %}
+{% endblock %}
