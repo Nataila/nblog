@@ -1,10 +1,16 @@
 {% extends 'nblog/base.html' %}
 {% block main%}
-  {% for i in posts_list %}
-    <h3><a href=""></a>{{ i.title }}</h3>
-    <p>{{ i.created_at }}</p>
-    <div class="post-content">
-      {{ i.content|safe }}
+  <div class="row">
+    <div class="col-md-9 col-sm-9">
+      {% for i in posts_list %}
+        <div class="post-item-fa">
+          <h3><a href=""></a>{{ i.title }}</h3>
+          <p>{{ i.created_at }}</p>
+        </div>
+      {% endfor %}
     </div>
-  {% endfor %}
+    <div class="col-md-3 col-sm-3">
+      right
+    </div>
+  </div>
 {% endblock %}
