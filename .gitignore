@@ -11,3 +11,4 @@ bin
 include
 node_modules
 local_settings.py
+.DS_Store

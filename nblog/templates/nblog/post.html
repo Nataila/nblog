@@ -1,0 +1,13 @@
+{% extends 'nblog/base.html' %}
+{% load staticfiles i18n %}
+{% block subtitle %}{{ post_detail.title }}{% endblock %}
+{% block main%}
+  <div class="row post-detail">
+    <div class="col-md-12 col-sm-12">
+      <h3 class='title'>{{ post_detail.title }}</h3>
+      <div class="post-detail-content">
+        {{ post_detail.content|safe }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

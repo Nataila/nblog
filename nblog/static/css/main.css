@@ -1,3 +1,52 @@
 html, body {
+  background: #E7E8E8;
+}
+a {
+  color: red;
+}
+.post-item-fa {
+  overflow: hidden;
+  background: #fff;
+  padding: 0 10px 10px 10px;
+}
+.post-item-fa + .post-item-fa {
+  margin-top: 20px;
+}
+.home-post-content {
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.top-attr span {
+  color: #8c8a8a;
+  font-size: 12px;
+  padding: 0 10px;
+}
+.top-attr span + span {
+  border-left: 1px solid #8c8a8a;
+}
+.top-attr .glyphicon {
+  margin-right: 5px;
+}
+.bottom-attr .label + .label {
+  margin-left: 5px;
+}
+.bottom-attr .more {
+  float: right;
+}
+
+.tag-list {
   background: #FFF;
+  padding: 5px 10px;
+}
+h3.title {
+  padding: 10px;
+}
+.post-detail {
+  background: #FFF;
+}
+.post-detail-content {
+  border-top: 1px dashed;
+  border-bottom: 1px dashed;
+  padding: 10px;
 }

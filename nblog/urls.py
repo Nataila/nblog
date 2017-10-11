@@ -19,7 +19,7 @@ from nblog import views
 
 urlpatterns = [
     url(r'^$', views.HomeView.as_view()),
-
+    url(r'^post/(?P<pk>[0-9]+)/$', views.PostDetailView.as_view(), name='post-detail'),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),

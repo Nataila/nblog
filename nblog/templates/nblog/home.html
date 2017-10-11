@@ -1,16 +1,37 @@
 {% extends 'nblog/base.html' %}
+{% load staticfiles i18n %}
+{% block subtitle %}{% trans '首页' %}{% endblock %}
 {% block main%}
   <div class="row">
     <div class="col-md-9 col-sm-9">
       {% for i in posts_list %}
         <div class="post-item-fa">
-          <h3><a href=""></a>{{ i.title }}</h3>
-          <p>{{ i.created_at }}</p>
+          <h3><a href="{% url 'post-detail' i.pk %}">{{ i.title }}</a></h3>
+          <p class='top-attr'>
+          <span>{{ i.created_at|date:'Y-m-d H:i:s' }}</span>
+          <span><i class="glyphicon glyphicon-eye-open"></i>32</span>
+          <span><i class="glyphicon glyphicon-comment"></i>52</span>
+          </p>
+          <div class="home-post-content">
+            {{ i.content|safe }}
+          </div>
+          <p class='bottom-attr'>
+          {% for t in i.tags.all %}
+            <a href='#' class='label label-default'>{{ t }}</a>
+          {% endfor %}
+          <span class="more">
+            <a href="">{% trans '查看全文>>' %}</a>
+          </span>
+          </p>
         </div>
       {% endfor %}
     </div>
     <div class="col-md-3 col-sm-3">
-      right
+      <div class="tag-list">
+        {% for tag in tag_list %}
+          <a href="" class='label label-default'>{{ tag.name }}</a>
+        {% endfor %}
+      </div>
     </div>
   </div>
 {% endblock %}
