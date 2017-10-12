@@ -14,11 +14,20 @@ class HomeView(ListView):
     """
     template_name = 'nblog/home.html'
     model = Posts
-    paginate_by = 10
+    paginate_by = 2
+
+    def get_queryset(self, *args, **kwargs):
+        tag = self.request.GET.get('tag')
+        if tag:
+            return Posts.objects.filter(tags=tag)
+        return Posts.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['tag_list'] = Tags.objects.all()
+        tag = self.request.GET.get('tag')
+        if tag:
+            context['tag'] = tag
         return context
 
 

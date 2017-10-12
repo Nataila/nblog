@@ -17,10 +17,10 @@
           </div>
           <p class='bottom-attr'>
           {% for t in i.tags.all %}
-            <a href='#' class='label label-default'>{{ t }}</a>
+            <a href='{% url "home" %}?tag={{ t.id }}' class='label label-default'>{{ t }}</a>
           {% endfor %}
           <span class="more">
-            <a href="">{% trans '查看全文>>' %}</a>
+            <a href="{% url 'post-detail' i.pk %}">{% trans '查看全文>>' %}</a>
           </span>
           </p>
         </div>
@@ -28,7 +28,7 @@
       {% if is_paginated %}
         <ul class="pagination">
           {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}&tag={{ tag }}">&laquo;</a></li>
           {% else %}
             <li class="disabled"><span>&laquo;</span></li>
           {% endif %}
@@ -36,11 +36,11 @@
             {% if page_obj.number == i %}
               <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
             {% else %}
-              <li><a href="?page={{ i }}">{{ i }}</a></li>
+              <li><a href="?page={{ i }}&tag={{ tag }}">{{ i }}</a></li>
             {% endif %}
           {% endfor %}
           {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}&tag={{ tag }}">&raquo;</a></li>
           {% else %}
             <li class="disabled"><span>&raquo;</span></li>
           {% endif %}
@@ -50,7 +50,7 @@
     <div class="col-md-3 col-sm-3">
       <div class="tag-list">
         {% for tag in tag_list %}
-          <a href="" class='label label-default'>{{ tag.name }}</a>
+          <a href="{% url 'home' %}?tag={{ tag.id }}" class='label label-default'>{{ tag.name }}</a>
         {% endfor %}
       </div>
     </div>

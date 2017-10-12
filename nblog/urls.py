@@ -18,7 +18,7 @@ from django.contrib import admin
 from nblog import views
 
 urlpatterns = [
-    url(r'^$', views.HomeView.as_view()),
+    url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^post/(?P<pk>[0-9]+)/$', views.PostDetailView.as_view(), name='post-detail'),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
