@@ -14,20 +14,6 @@ class TagsAdmin(admin.ModelAdmin):
 class PostsAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at')
 
-    def get_media(self):
-        js = (
-            '/static/plugins/ueditor/ueditor.config.js',
-            '/static/plugins/ueditor/ueditor.all.js',
-            '/static/plugins/ueditor/config.js',
-        )
-        css = [
-            '/static/css/admin.css',
-        ]
-        media = super(PostsAdmin, self).get_media()
-        media.add_js(js)
-        media.add_css({'screen': css})
-        return media
-
 
 admin.site.register(Tags, TagsAdmin)
 admin.site.register(Posts, PostsAdmin)
