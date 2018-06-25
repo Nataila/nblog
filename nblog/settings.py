@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = 'static/uploads'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/uploads')
 MEDIA_URL = '/static/uploads/'
 
 STATICFILES_FINDERS = [
