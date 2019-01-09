@@ -10,4 +10,19 @@
       </div>
     </div>
   </div>
+  <div id="vcomments"></div>
+{% endblock %}
+{% block js %}
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: '{{ settings.VALINE_APPID }}',
+    appKey: '{{ settings.VALINE_KEY }}',
+    notify:false,
+    verify:false,
+    avatar:'mm',
+    visitor: true,
+    placeholder: '欢迎对本文章进行讨论~'
+  });
+</script>
 {% endblock %}

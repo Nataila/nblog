@@ -50,3 +50,9 @@ h3.title {
   border-bottom: 1px dashed;
   padding: 10px;
 }
+#vcomments {
+  margin-top: 30px;
+  background: #FFF;
+  margin-left: -15px;
+  margin-right: -15px;
+}
