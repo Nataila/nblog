@@ -17,12 +17,18 @@ class Tags(models.Model):
     def __unicode__(self):
         return self.name
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = verbose_name_plural = u"标签"
 
 
 def m2mdefault():
-    return [Tags.objects.first().pk]
+    try:
+        return [Tags.objects.first().pk]
+    except:
+        return []
 
 
 class Posts(models.Model):

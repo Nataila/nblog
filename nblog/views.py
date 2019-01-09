@@ -5,7 +5,7 @@
 from __future__ import unicode_literals
 
 from django.views.generic import ListView, DetailView
-from models import Posts, Tags
+from .models import Posts, Tags
 
 
 class HomeView(ListView):

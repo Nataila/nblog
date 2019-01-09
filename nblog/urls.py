@@ -13,14 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import include, static
+from django.conf import settings
+import os
+from django.urls import path
 from django.contrib import admin
 from nblog import views
 
 urlpatterns = [
-    url(r'^$', views.HomeView.as_view(), name='home'),
-    url(r'^post/(?P<pk>[0-9]+)/$', views.PostDetailView.as_view(), name='post-detail'),
-    url(r'^ueditor/', include('DjangoUeditor.urls')),
-    url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^admin/', admin.site.urls),
+    path('', views.HomeView.as_view(), name='home'),
+    path('post/<int:pk>/', views.PostDetailView.as_view(), name='post-detail'),
+    path('ueditor/', include('DjangoUeditor.urls')),
+    path('grappelli/', include('grappelli.urls')),
+    path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    media_root = os.path.join(settings.BASE_DIR, settings.MEDIA_ROOT)
+    urlpatterns += static.static(settings.MEDIA_URL, document_root=media_root)
