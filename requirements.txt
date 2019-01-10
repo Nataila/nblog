@@ -3,3 +3,4 @@ django-grappelli==2.12.1
 pytz==2018.9
 django-formtools==2.0
 httplib2==0.9.2
+https://github.com/twz915/DjangoUeditor3/archive/master.zip
