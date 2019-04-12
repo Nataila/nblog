@@ -53,4 +53,5 @@ class Posts(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=u'创建时间')
 
     class Meta:
+        ordering = ['-created_at']
         verbose_name = verbose_name_plural = u"文章"
