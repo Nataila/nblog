@@ -2,9 +2,39 @@
 {% load staticfiles i18n %}
 {% block subtitle %}add{% endblock %}
 {% block main %}
-<div id="editor">
-    <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
-</div>
+
+
+
+
+<form method='post'>
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlInput1">标题</label>
+    <input type="text" class="form-control" id="title" name='title'>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">类别</label>
+    <select class="form-control" id="" name='blog_type'>
+      <option value='0'>原创</option>
+      <option value='1'>转载</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">标签</label>
+    <select multiple class="form-control" id="" name='tags'>
+      <option>1</option>
+      <option>2</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">内容</label>
+    <div id="editor" name='content'>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">发表</button>
+  </div>
+</form>
 {% endblock %}
 {% block js %}
 <script src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js" charset="utf-8"></script>
