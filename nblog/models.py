@@ -3,7 +3,6 @@
 # cc @ 2017-09-27
 
 from django.db import models
-# from DjangoUeditor.models import UEditorField
 
 
 class Tags(models.Model):
@@ -42,11 +41,6 @@ class Posts(models.Model):
 
     title = models.CharField(max_length=200, verbose_name=u"文章标题")
     content = models.TextField(default=None, blank=True, null=True)
-    # content = UEditorField(u'内容', width='100%', height=600, toolbars="full",
-    #                        imagePath="", filePath="",
-    #                        upload_settings={"imageMaxSize": 1204000},
-    #                        settings={}, command=None,
-    #                        blank=True)
     link = models.CharField(max_length=200, verbose_name=u"原文地址",
                             blank=True)
     tags = models.ManyToManyField(Tags, default=m2mdefault)

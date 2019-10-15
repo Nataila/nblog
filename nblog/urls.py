@@ -24,8 +24,6 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='post-detail'),
     path('post/add/', views.PostAddView.as_view(), name='post-add'),
-#    path('ueditor/', include('DjangoUeditor.urls')),
-#    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
 ]
 
