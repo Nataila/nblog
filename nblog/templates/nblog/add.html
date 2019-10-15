@@ -1,0 +1,17 @@
+{% extends 'nblog/base.html' %}
+{% load staticfiles i18n %}
+{% block subtitle %}add{% endblock %}
+{% block main %}
+<div id="editor">
+    <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+</div>
+{% endblock %}
+{% block js %}
+<script src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js" charset="utf-8"></script>
+<script charset="utf-8">
+var E = window.wangEditor
+var editor = new E('#editor')
+// 或者 var editor = new E( document.getElementById('editor') )
+editor.create() 
+</script>
+{% endblock %}

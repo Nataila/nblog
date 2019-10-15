@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'grappelli',
+    # 'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,11 +129,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
+# ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/uploads')
-MEDIA_URL = '/static/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/uploads')
+# MEDIA_URL = '/static/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
