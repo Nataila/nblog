@@ -56,3 +56,13 @@ h3.title {
   margin-left: -15px;
   margin-right: -15px;
 }
+
+.main-content {
+  margin-top: 30px;
+  padding: 20px;
+  background: #FFF;
+}
+
+.codehilite {
+  padding: 20px;
+}

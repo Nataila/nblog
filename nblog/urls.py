@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import include, static
 from django.conf import settings
-import os
 from django.urls import path
 from django.contrib import admin
 from nblog import views
@@ -23,10 +22,9 @@ from nblog import views
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='post-detail'),
-    path('post/add/', views.PostAddView.as_view(), name='post-add'),
     path('admin/', admin.site.urls),
+    path('mdeditor/', include('mdeditor.urls')),
 ]
 
-# if settings.DEBUG:
-#     media_root = os.path.join(settings.BASE_DIR, settings.MEDIA_ROOT)
-#     urlpatterns += static.static(settings.MEDIA_URL, document_root=media_root)
+if settings.DEBUG:
+    urlpatterns += static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

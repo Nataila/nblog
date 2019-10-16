@@ -3,6 +3,7 @@
 # cc @ 2017-09-27
 
 from django.db import models
+from mdeditor.fields import MDTextField
 
 
 class Tags(models.Model):
@@ -40,7 +41,7 @@ class Posts(models.Model):
     ]
 
     title = models.CharField(max_length=200, verbose_name=u"文章标题")
-    content = models.TextField(default=None, blank=True, null=True)
+    content = MDTextField(verbose_name='内容')
     link = models.CharField(max_length=200, verbose_name=u"原文地址",
                             blank=True)
     tags = models.ManyToManyField(Tags, default=m2mdefault)

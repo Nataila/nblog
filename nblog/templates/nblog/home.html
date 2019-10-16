@@ -1,5 +1,6 @@
 {% extends 'nblog/base.html' %}
 {% load staticfiles i18n %}
+{% load helper %}
 {% block subtitle %}{% trans '首页' %}{% endblock %}
 {% block main%}
   <div class="row">
@@ -13,7 +14,7 @@
           <span><i class="glyphicon glyphicon-comment"></i>52</span>
           </p>
           <div class="home-post-content">
-            {{ i.content|safe }}
+            {{ i.content|md|safe }}
           </div>
           <p class='bottom-attr'>
           {% for t in i.tags.all %}
@@ -95,4 +96,6 @@
       </div>
     </div>
   </div>
+  {% block js %}
+  {% endblock %}
 {% endblock %}

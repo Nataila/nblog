@@ -5,8 +5,7 @@
 from __future__ import unicode_literals
 
 from django.views.generic import ListView, DetailView
-from django.views import View
-from django.shortcuts import render
+
 from .models import Posts, Tags
 
 
@@ -16,7 +15,7 @@ class HomeView(ListView):
     """
     template_name = 'nblog/home.html'
     model = Posts
-    paginate_by = 2
+    paginate_by = 10
 
     def get_queryset(self, *args, **kwargs):
         tag = self.request.GET.get('tag')
@@ -41,15 +40,3 @@ class PostDetailView(DetailView):
     model = Posts
     context_object_name = 'post_detail'
     queryset = Posts.objects.all()
-
-
-class PostAddView(View):
-    """ 添加文章 """
-    template_name = 'nblog/add.html'
-
-    def get(self, request):
-        return render(request, self.template_name)
-
-    def post(self, request):
-        print(request.POST)
-        return render(request, self.template_name)

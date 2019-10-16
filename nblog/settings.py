@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mdeditor',
     'nblog',
 ]
 
@@ -127,11 +128,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/uploads')
-# MEDIA_URL = '/static/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
