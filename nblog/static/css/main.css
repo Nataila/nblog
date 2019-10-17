@@ -58,11 +58,31 @@ h3.title {
 }
 
 .main-content {
-  margin-top: 30px;
+  margin-top: -200px;
   padding: 20px;
-  background: #FFF;
 }
 
 .codehilite {
   padding: 20px;
+}
+
+.banner {
+  text-align: center;
+  height: 500px;
+  overflow: hidden;
+  background: url('../images/banner-bg.jpg');
+}
+.banner-title {
+  color: #FFF;
+  font-size: 34px;
+  display: inline-block;
+  margin: 120px 0 20px;
+}
+.banner h1 {
+  margin: 120px 0 20px;
+  text-align: center;
+  color: #FFF;
+}
+.cc-navbar {
+  background: rgba(0, 0, 0, 0.2);
 }
