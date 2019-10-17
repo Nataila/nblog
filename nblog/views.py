@@ -30,13 +30,15 @@ class HomeView(ListView):
             )
         return Posts.objects.all()
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(HomeView, self).get_context_data(**kwargs)
-    #     context['tag_list'] = Tags.objects.all()
-    #     tag = self.request.GET.get('tag')
-    #     if tag:
-    #         context['tag'] = tag
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        search = self.request.GET.get('search')
+        context['search'] = search
+        # context['tag_list'] = Tags.objects.all()
+        # tag = self.request.GET.get('tag')
+        # if tag:
+        #     context['tag'] = tag
+        return context
 
 
 class PostDetailView(DetailView):

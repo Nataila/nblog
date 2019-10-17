@@ -19,7 +19,7 @@
           </div>
           <p class='bottom-attr'>
           {% for t in i.tags.all %}
-            <a href='{% url "home" %}?tag={{ t.id }}' class='label label-default'>{{ t }}</a>
+            <a href='{% url "home" %}?tag={{ t.id }}' class='badge badge-danger'>{{ t }}</a>
           {% endfor %}
           <span class="more">
             <a href="{% url 'post-detail' i.pk %}">{% trans '查看全文>>' %}</a>

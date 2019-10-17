@@ -71,6 +71,7 @@ h3.title {
   height: 500px;
   overflow: hidden;
   background: url('../images/banner-bg.jpg');
+  background-position-y: -250px;
 }
 .banner-title {
   color: #FFF;
