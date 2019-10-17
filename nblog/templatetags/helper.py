@@ -13,9 +13,12 @@ register = template.Library()
 
 @register.filter
 def md(content):
-    res = markdown.markdown(content, extensions=[
-        'markdown.extensions.extra',
-        'markdown.extensions.codehilite',
-        'markdown.extensions.toc',
-    ])
+    res = markdown.markdown(
+        content,
+        extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
+        ],
+    )
     return res

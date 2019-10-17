@@ -10,9 +10,11 @@ class Tags(models.Model):
     """
     标签
     """
+
     name = models.CharField(max_length=200, verbose_name=u"标签名称")
-    created_at = models.DateTimeField(verbose_name=u'创建时间',
-                                      editable=False, auto_now_add=True)
+    created_at = models.DateTimeField(
+        verbose_name=u'创建时间', editable=False, auto_now_add=True
+    )
 
     def __unicode__(self):
         return self.name
@@ -35,15 +37,12 @@ class Posts(models.Model):
     """
     文章
     """
-    TYPE_CHOICES = [
-        (1, u'原创'),
-        (2, u'转载')
-    ]
+
+    TYPE_CHOICES = [(1, u'原创'), (2, u'转载')]
 
     title = models.CharField(max_length=200, verbose_name=u"文章标题")
     content = MDTextField(verbose_name='内容')
-    link = models.CharField(max_length=200, verbose_name=u"原文地址",
-                            blank=True)
+    link = models.CharField(max_length=200, verbose_name=u"原文地址", blank=True)
     tags = models.ManyToManyField(Tags, default=m2mdefault)
     blog_type = models.IntegerField(choices=TYPE_CHOICES, default=1)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=u'创建时间')

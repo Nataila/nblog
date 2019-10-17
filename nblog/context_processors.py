@@ -10,7 +10,5 @@ def constants_context_processor(request):
     '''
     模版里的全局变量
     '''
-    ctx = {
-        'settings': settings,
-    }
+    ctx = {'settings': settings}
     return ctx
