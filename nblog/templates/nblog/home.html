@@ -11,8 +11,6 @@
           <h3><a href="{% url 'post-detail' i.pk %}">{{ i.title }}</a></h3>
           <p class='top-attr'>
           <span>{{ i.created_at|date:'Y-m-d H:i:s' }}</span>
-          <span><i class="glyphicon glyphicon-eye-open"></i>32</span>
-          <span><i class="glyphicon glyphicon-comment"></i>52</span>
           </p>
           <div class="home-post-content">
             {{ i.content|md|safe }}

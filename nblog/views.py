@@ -32,7 +32,7 @@ class HomeView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        search = self.request.GET.get('search')
+        search = self.request.GET.get('search', '')
         context['search'] = search
         # context['tag_list'] = Tags.objects.all()
         # tag = self.request.GET.get('tag')
