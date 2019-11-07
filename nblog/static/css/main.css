@@ -87,3 +87,11 @@ h3.title {
 .cc-navbar {
   background: rgba(0, 0, 0, 0.2);
 }
+p.icp {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+p.icp img {
+  width: 20px;
+}
