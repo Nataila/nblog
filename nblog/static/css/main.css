@@ -92,6 +92,9 @@ p.icp {
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
+p.icp a {
+  color: #000;
+}
 p.icp img {
   width: 20px;
 }
