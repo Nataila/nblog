@@ -9,6 +9,9 @@ from django.db.models import Q
 
 from .models import Posts
 
+import logging
+logger = logging.getLogger('django')
+
 
 class HomeView(ListView):
     """

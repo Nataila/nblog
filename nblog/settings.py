@@ -135,6 +135,46 @@ STATICFILES_FINDERS = [
 VALINE_APPID = ''
 VALINE_KEY = ''
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {'simple': {'format': '[%(asctime)s] %(levelname)s %(message)s'}},
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/rq.log',
+            'formatter': 'simple',
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+            },
+        'ui': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/ui.log',
+            'formatter': 'simple',
+        },
+        'djangofile': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/dj.log',
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'djangofile'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'rq.worker': {'handlers': ['file'], 'level': 'INFO', 'propagate': True,},
+        'ui': {'handlers': ['console', 'file'], 'level': 'INFO', 'propagate': True,},
+    },
+}
+
+
 try:
     from .local_settings import *
 except ImportError:
